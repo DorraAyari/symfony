@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ClassroomController!{% endblock %}
+
+{% block body %}
+
+<div class="example-wrapper">
+    <h1>welcome</h1>
+
+    <table class="table" border="3" align="center">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+             <th>ajouter</th>
+            <th>modifier</th>
+              <th>supprimer</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            {% for classroom in classrooms %}
+                <tr>
+                    <td>  {{ classroom.id }} </td>
+                    <td>  {{ classroom.name }} </td>
+                  
+                
+                  <td><a class="btn btn-primary" href="{{path('ajouter')}}" > ajouter </a></td>
+                    <td> <a class="btn btn-primary" href="{{path('modifier',{ id:classroom.id}      ) }} " >
+ modifier
+</a>  <td>
+<a href="{{path('supprimer',{ id:classroom.id}      ) }} " class="btn btn-primary" >
+ supprimer
+</a> 
+</td>
+
+</tr>
+            {% endfor %}
+        </tr>
+    </tbody>
+</table>
+</div>
+{% endblock %}
