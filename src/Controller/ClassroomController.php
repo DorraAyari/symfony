@@ -23,7 +23,7 @@ class ClassroomController extends AbstractController
         ]);
     }
     #[Route('/afficheall', name: 'app_afficheall')]
-    public function afficheall( ClassroomRepository $classroomrepository): Response
+    public function afficheall(ClassroomRepository $classroomrepository): Response
     {
         $classrooms=$classroomrepository->findAll();
         return $this->render('dorra/afficher.html.twig', [
@@ -41,7 +41,7 @@ class ClassroomController extends AbstractController
         $em=$doctrine->getManager();
        //persist=ajouter
        $em->persist($classroom);
-       //flush=pish
+       //flush=push
        $em->flush();
        return $this->redirectToRoute('app_afficheall', [
     ]);
