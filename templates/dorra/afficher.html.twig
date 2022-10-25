@@ -5,14 +5,15 @@
 {% block body %}
 
 <div class="example-wrapper">
-    <h1>welcome</h1>
+    <h1>welcome</h1>   
+    <h1><a class="btn btn-primary" href="{{path('ajouter')}}" > ajouter </a></h1>
 
-    <table class="table" border="3" align="center">
+  <table class="table" border="3" align="center">
     <thead>
         <tr>
             <th>id</th>
             <th>name</th>
-             <th>ajouter</th>
+
             <th>modifier</th>
               <th>supprimer</th>
         </tr>
@@ -25,11 +26,11 @@
                     <td>  {{ classroom.name }} </td>
                   
                 
-                  <td><a class="btn btn-primary" href="{{path('ajouter')}}" > ajouter </a></td>
-                    <td> <a class="btn btn-primary" href="{{path('modifier',{ id:classroom.id}      ) }} " >
+               
+                    <td> <a class="btn btn-danger" href="{{path('modifier',{ id:classroom.id}      ) }} " >
  modifier
 </a>  <td>
-<a href="{{path('supprimer',{ id:classroom.id}      ) }} " class="btn btn-primary" >
+<a href="{{path('supprimer',{ id:classroom.id}      ) }} " class="btn btn-success" >
  supprimer
 </a> 
 </td>

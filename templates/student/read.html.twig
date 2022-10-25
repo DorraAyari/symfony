@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ClassroomController!{% endblock %}
+
+{% block body %}
+
+<div class="example-wrapper">
+    <h1>welcome</h1>
+    <h1><a class="btn btn-primary" href="{{path('ajouterS')}}" > ajouter </a></h1>
+    <table class="table" border="3" align="center">
+    <thead>
+        <tr>
+            <th>nsc</th>
+            <th>email</th>
+                        <th>classroom</th>
+            <th>modifier</th>
+              <th>supprimer</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            {% for student in students %}
+                <tr>
+                    <td>  {{ student.nsc }} </td>
+                    <td>  {{ student.email }} </td>
+                                        <td>  {{ student.Clasrroom.name }} </td>
+              
+
+                  
+                
+               
+</td>
+              <td><a class="btn btn-success" href="{{path('modifierS',{ nsc:student.nsc}      ) }}" > modifier </a></td>
+
+                  
+                
+               
+</td>
+     <td> <a class="btn btn-danger" href="{{path('supprimerS',{ nsc:student.nsc}      ) }} " >
+ supprimer
+</a>  <td>
+</tr>
+            {% endfor %}
+        </tr>
+    </tbody>
+</table>
+</div>
+{% endblock %}

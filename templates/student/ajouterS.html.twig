@@ -1,0 +1,10 @@
+
+{{ form_start(student) }}
+    {{form_label(student.nsc ,"your email") }}  
+    {{form_widget(student.nsc) }}    
+    {{form_errors(student.nsc) }}    
+      {{form_help(student.nsc) }}    
+    {{form_errors(student.email) }}    
+
+
+{{ form_end(student) }}
